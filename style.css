@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica+SC&family=Poppins:ital,wght@0,600;0,700;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanuman&family=IM+Fell+Double+Pica+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica+SC&family=Inter:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica+SC&family=Inter:wght@100;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,700;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*--------------- INICIO ---------------*/
+
+.section-1-bg{
+    background-image: url(./back-fundo.png); /*Img de fundo*/
+    background-repeat: no-repeat; /*Para a img não se repetir*/
+    background-position: center center; /*Img centralizada*/
+    background-size: cover; /*Img tomar toda a div*/
+    height: 100vh; /*Altura*/
+    width: 100%; /*Largura em toda div*/
+}
+
+aside{ /*Barra de Menu*/
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    overflow: hidden; /*Deixa invisivel no menu fechado*/
+}
+
+.icon-menu img{ /*Estilizando a img do icone*/
+    width: 45px; /*Largura*/
+    height: 45px; /*Altura*/
+    margin-right: 25px; /*Margem da direita*/
+    margin-top: 15px; /*Margem do topo*/
+    cursor: pointer;
+}
+
+#barra-menu{ /*Barra do Menu roxa*/
+    background: #6f08c4;
+    height: 100vh;
+    width: 0px; /*Para a função do Js ao abrir e fechar*/
+    transition: 0.3s all; /*Transição de todos os elementos da barra*/
+}
+
+#barra-menu ul li {
+    list-style: none; /*Tira os marcadores dos textos*/
+    padding: 15px; /*Espacamento entre os itens*/
+}
+
+#barra-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    width: 100%;
+}
+
+#barra-menu ul li a:hover{ /*Estilização dos links quando passa o mouse*/
+    border: solid 1px #ffffff;
+    padding: 8px;
+    border-radius: 15px;
+    background: #370bfd;
+}
+
+.C-icon{
+    margin-top: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 15px;
+    overflow: hidden; /*Para por o efeito com JS*/
+}
+
+.C-icon span{ /*Icones das redes sociais*/
+    color: #fbf7f7;
+}
+
+.C-icon span:hover{ /*Estilização para quando passa o mouse em cima dos icones da rede social*/
+    transition: 0.2s;
+    transform: 0.5s;
+    color: #370bfd;
+}
+
+.main-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20%;
+    flex-wrap: wrap; /*Para o responsivo*/
+}
+
+.main-title h1{
+    font-size: 70px;
+    color: #fff;
+    margin-top: 15%;
+    font-family: "Poppins";
+    font-weight: bold;
+    letter-spacing: px;
+
+}
+
+.main-title h2{
+    color: #370bfd;
+    font-size: 50px;
+    font-family: "Hanuman";
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.main-title h5{
+    color: #fff;
+    font-size: 15px;
+    font-family: "Hanuman";
+    letter-spacing: 2px;
+    font-weight: 200;
+
+}
+
+.main-title button{
+    width: 15%;
+    margin-top: 80px;
+    padding: 8px 5px;
+    font-size: 20px;
+    background-color: #370bfd;
+    border-radius: 50px;
+    color: #fbf7fb;
+    font-family: "Inter";
+    cursor: pointer;
+    transition-duration: .9s;
+}
+
+.main-title button:hover{
+    border: solid 1px #fff;
+    transition: 0.7s;
+    background-color: #6f08c4;
+}
+
+.numeros{
+    display: flex;
+    margin-top: 35px;
+    color: #fff;
+    gap: 40px; /*Afastamento entre os elementos*/
+    cursor: pointer;
+    transition: 0.5s;
+    animation-name: floating; /*Animação para Flutuar*/
+    animation-duration: 3s; /*Animação para Flutuar*/
+    animation-iteration-count: infinite; /*Animação para Flutuar*/
+    animation-timing-function: ease-in-out; /*Animação para Flutuar*/
+}
+
+.title h3{
+    font-size: 35px;
+    margin-top: 15px;
+    font-family: "Inter";
+    font-weight: bold;
+}
+
+.title p{
+    font-family: "Inter";
+    font-weight: normal;
+}
+
+.title:hover{ /*Quando o mouse passar por cima dos textos*/
+    transition: 1.2;
+    transform: scale(1.1); /*Transição, aumenta o texto quando passa por cima*/
+}
+
+@media screen and (max-width: 414px) { /*Responsividade para telas de 414px*/
+    .main-title h1{
+        font-size: 40px;
+        margin-top: 70%;
+        margin-right: 15%;
+    }
+    .main-title h2{
+        font-size: 25px;
+        margin-right: 15%;
+    }
+    .main-title button{
+        width: 150px;
+    }
+    .numeros{
+        margin-right: 25%;
+        margin-top: 50%;
+    }
+}
+
+/*-----------  Sobre mim  -------------*/
+
+.C-sobre{
+    background-image: url(./sobre-fundo.png);
+    display: flex; /*Itens um ao lado do outro*/
+    justify-content: space-around; /*Espacamento entre os elementos*/
+    padding: 150px 0px; /*Espacamento pro topo e pra esquerda*/
+    width: 100%; /*Largura do container sobre tem 100%*/
+    flex-wrap: wrap; /*Para os elementos se contrairem quando a tela for diminuindo jogando os elementos para baixo*/
+}
+
+@keyframes floating { /*Animação para a foto Flutuar*/
+    0% { transform: translate(0,  0px); } /*Animação para a foto Flutuar*/
+    50%  { transform: translate(0, 15px); } /*Animação para a foto Flutuar*/
+    100%   { transform: translate(0, -0px); }   /*Animação para a foto Flutuar*/
+}
+
+.image img{
+    width: 400px;
+    height: auto;
+    box-shadow: 4px 4px 4px #858585; /*Sombra dos lados da img*/
+    border-radius: 10% 0 10% 0; /*Deixar a img com os lados arredondados*/
+    animation-name: floating; /*Animação para a foto Flutuar*/
+    animation-duration: 3s; /*Animação para a foto Flutuar*/
+    animation-iteration-count: infinite; /*Animação para a foto Flutuar*/
+    animation-timing-function: ease-in-out; /*Animação para a foto Flutuar*/
+}
+
+.Sobre-mim h1{
+    text-align: center;
+    font-size: 55px;
+    font-family: "Inter";
+    font-weight: bold;
+    color: #fff;
+}
+
+.Sobre-mim h4{
+    text-align: center;
+    margin-top: 30px; /*Espacamento do topo*/
+    font-size: 25px;
+    color: #fff;
+    font-weight: normal;
+    font-weight: bold;
+    font-family: "Inria Sans";
+}
+
+.Sobre-mim span{
+    color: #370bfd;
+}
+
+.Sobre-mim p{
+    margin-top: 25px;
+    font-family: "Inria Sans";
+    color: #fff;
+}
+
+.Sobre-mim button{
+    background-color: #370bfd;
+    margin-left: 35%;
+    margin-top: 30px;
+    padding: 10px 50px;
+    border: none;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 50px;
+    box-shadow: 4px 4px 4px #858585; /*Sombra debaixo botão*/
+    transition-duration: .9s ;
+}
+
+.Sobre-mim button:hover{ /*Quando passar o mouse em cima do botão*/
+    color: #ffffff;
+    background-color: #6f08c4;
+    transition: 0.8s;
+}
+
+@media screen and (max-width: 414px) {
+    .image img{
+        width: 350px;
+        height: auto;
+    }
+    .Sobre-mim p {
+        font-size: 12px;
+        width: 500px;
+        padding: 15px;
+        text-align: center;
+    }
+    .Sobre-mim h1{
+        margin-top: 10%;
+    }
+}
+
+/*-----------  Serviços/Cards  -------------*/
+.container{
+    width: 100%;
+    background-color: #f3eeee;
+    padding: 50px;
+}
+
+.container h1{
+    text-align: center;
+    font-size: 70px;
+    font-family: "Inria Sans";
+    font-weight: bold;
+    padding-top: 12%;
+}
+
+.container p{
+    text-align: center;
+    font-family: "Inria Sans";
+    color: #685b5b;
+    margin-top: 25px;
+}
+
+.C-card{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 35%;
+    text-align: center;
+    flex-wrap: wrap;
+
+}
+
+.card{
+    background-color: #fffbfb;
+    padding: 50px;
+    box-shadow: 4px 4px 4px #858585; /*Sombra*/
+    margin-top: 5px;
+    border-radius: 10% 0 10% 0;
+}
+
+.card img{
+    width: 50px;
+    height: auto;
+}
+
+.C-card-2 {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5%;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.card h3{
+    font-size: 20px;
+    font-family: "Inria Sans";
+    font-weight: 700;
+}
+
+.card h4{
+    font-family: "Inria Sans";
+    font-weight: lighter;
+    color: #beb7b7;
+    margin-top: 15px;
+}
+
+.card:hover{ /*Aumenta os Cards quando o mouse passa em cima*/
+    transform: scale(1.1); /*Aumenta o tamanho*/
+    transition-duration: .9s;
+}
+
+@media screen and (max-width: 414px) {
+    .card{
+        margin-top: 35px;
+    }
+    .C-card-2{
+        margin-top: 35px;
+    }
+}
+
+/*-----------  Projetos  -------------*/
+
+.C-projetos{
+    width: 100%;
+    background-color: #fff;
+    padding: 85px;
+}
+
+.C-projetos h1{
+    text-align: center;
+    font-size: 65px;
+    font-family: "Inria Sans";
+    font-weight: bold;
+    padding: 10%;
+}
+
+.C-projetos p{
+    text-align: center;
+    font-family: "Inria Sans";
+    color: #685b5b;
+    font-weight: lighter;
+    margin-top: 5px;
+}
+
+.img-projetos{
+    display: flex; /*Uma img do lado da outra*/
+    justify-content: center;
+    gap: 70px; /*Espacamento*/
+    margin-top: 150px;
+    flex-wrap: wrap; /*Quebra quando a tela contrai*/
+}
+
+.img-projetos img{
+    width: 450px; /*Diminuindo o tamanho das img*/
+    height: auto; /*Altura automatica*/
+    border-radius: 10px; /*Borda nas img*/
+    box-shadow: 4px 4px 4px #858585 ; /*Sombra nas img*/
+}
+
+.C-projetos img:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+    transition-duration: 0.9s;
+    border: solid 2px #180127;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 414px) { /*Responsividade para telas de 114px*/
+    .img-projetos img{
+        width: 300px;
+        height: auto;
+    }
+    .C-projetos h1{
+        font-size: 25px;
+    }
+}
+
+/*-----------  Footer/RodaPé  -------------*/
+
+.C-rodape{
+    width: 100%;
+    background-color: #000000;
+    padding: 50px;
+}
+
+.C-rodape h1{
+    text-align: center;
+    color: #fff;
+    font-family: "Inria Sans";
+    font-weight: lighter;
+}
+
+.C-rodape form input:first-child{ /*first-child pega só o input para estilizar e não o botão*/
+    display: inline-block;
+    width: 100%;
+    padding: 14px 50px 14px 15px;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    margin-top: 25px;
+}
+
+.C-rodape form input:last-child{ /*lest child pega o segudo elemento para estilizar no caso o botao*/
+    position: absolute;
+    display: inline-block;
+    outline: none;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 30px;
+    background-color: #c229aa;
+    color: #fff;
+    box-shadow: 0px 0px 5px #000, 0px 0px 15px #858585;
+    cursor: pointer;
+    font-size: 15px;
+    width: 150px;
+    margin-top: 28px;
+    right: 100px;
+}
+
+@media screen and (max-width: 414px) {
+    .C-rodape form input:last-child{
+        width: 100px;
+    }
+}
